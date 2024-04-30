@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "User",
+      "email": "email@email.com",
+      "password": "password123"
+    }
+  ],
+  "scooters": [
+    {
+      "id": 1,
+      "brand": "Brand Name",
+      "description": "Lorem Ipsum etvc",
+      "price": 100,
+      "image": "https://placehold.co/400"
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "initDate": "01/05/2024",
+      "endDate": "31/05/2024"
+    }
+  ]
+}
