@@ -9,7 +9,7 @@ export const routes = [
   },
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/home-view",
   },
   {
     path: "/sign-up",
