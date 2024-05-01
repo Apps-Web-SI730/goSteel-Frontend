@@ -1,5 +1,5 @@
 <script>
-import TheHeaderContent from '@/core/public/components/the-header-content.vue';
+import TheHeaderContent from '@/core/public/components/the-header-content.component.vue';
 import HomeUs from '@/core/public/components/home-us.component.vue';
 import HomeScooters from '@/core/public/components/home-scooters.component.vue';
 import HomeGetStarted from '@/core/public/components/home-get-started.component.vue'

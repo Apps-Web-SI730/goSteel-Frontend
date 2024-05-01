@@ -11,7 +11,7 @@ export const routes = [
   {
     path: "/user-sign",
     name: "Sign Up Form",
-    component: () => import("@/core/fast-scooter/pages/user-sign-up-form.vue")
+    component: () => import("@/core/fast-scooter/pages/user-sign-up-form.component.vue")
   },
   {
     path: "/user-login",
@@ -47,7 +47,7 @@ export const routes = [
   {
     path: "/scooter-purchase",
     name: "Purchase a Scooter",
-    component: () => import("@/core/fast-scooter/pages/scooter-purchase.vue")
+    component: () => import("@/core/fast-scooter/pages/scooter-purchase.component.vue")
   },
 
   {

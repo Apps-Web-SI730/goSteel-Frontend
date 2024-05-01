@@ -1,5 +1,5 @@
 <script>
-import TheHeaderContent from '@/core/public/components/the-header-content.vue'
+import TheHeaderContent from '@/core/public/components/the-header-content.component.vue'
 
 export default {
   name: 'page-not-found.component',
