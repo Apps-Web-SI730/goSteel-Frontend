@@ -9,12 +9,12 @@ export const routes = [
   },
 
   {
-    path: "/user-sign",
+    path: "/sign-up",
     name: "Sign Up Form",
     component: () => import("@/core/fast-scooter/pages/user-sign-up-form.component.vue")
   },
   {
-    path: "/user-login",
+    path: "/login",
     name: "Login Form",
     component: () => import("@/core/fast-scooter/pages/user-login-form.component.vue")
   },
@@ -35,7 +35,7 @@ export const routes = [
   },
 
   {
-    path: "/search-scooter",
+    path: "/scooter-search",
     name: "Search Scooter",
     component: () => import("@/core/fast-scooter/pages/scooter-search.component.vue")
   },
