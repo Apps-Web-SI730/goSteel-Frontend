@@ -2,7 +2,7 @@
 // import moment from 'moment';
 
 import UserHeader from '@/core/fast-scooter/components/user-header.component.vue';
-import PvButton from '@/main.js'
+
 // import { userService } from '../services/user.service';
 // import { bicycleService } from '../services/bicycle.lyw.service';
 // import { cardService } from '../services/card.lyw.service';
@@ -11,7 +11,6 @@ export default {
   name: 'user-profile',
 
   components: {
-    PvButton,
     UserHeader
   },
 

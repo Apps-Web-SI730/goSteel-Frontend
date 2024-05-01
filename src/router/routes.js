@@ -9,12 +9,12 @@ export const routes = [
   },
 
   {
-    path: "/sign",
+    path: "/user-sign",
     name: "Sign Up Form",
     component: () => import("@/core/fast-scooter/pages/user-sign-up-form.vue")
   },
   {
-    path: "/login",
+    path: "/user-login",
     name: "Login Form",
     component: () => import("@/core/fast-scooter/pages/user-login-form.component.vue")
   },
@@ -52,7 +52,7 @@ export const routes = [
 
   {
     path: "/",
-    redirect: "/home-view",
+    redirect: "/home",
   },
   {
     path: "/:pathMatch(.*)*",
