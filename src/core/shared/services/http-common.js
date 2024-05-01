@@ -1,8 +1,8 @@
 import axios from "axios";
 
-import VITE_API_BASE_URL from "../../../environments/.env.development";
+// import VITE_API_BASE_URL from "../../../environments/.env.development";
 
-const API_BASE_URL = VITE_API_BASE_URL;
+const API_BASE_URL = "http://localhost:3000/api/v1";
 
 const http = axios.create({
   baseURL: API_BASE_URL,

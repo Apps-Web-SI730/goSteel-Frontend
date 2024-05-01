@@ -1,6 +1,6 @@
 import http from "@/core/shared/services/http-common";
 
-class UsersService {
+class UsersApiService {
 
   getUsers() {
     return http.get("/users");
@@ -24,4 +24,4 @@ class UsersService {
 
 }
 
-export default new UsersService();
+export default new UsersApiService();

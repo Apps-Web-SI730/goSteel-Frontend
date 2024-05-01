@@ -3,38 +3,56 @@ import PageNotFound from "@/core/public/pages/page-not-found.component.vue";
 
 export const routes = [
   {
-    path: "/home-view",
+    path: "/home",
     name: "Home View",
     component: HomeView,
   },
-  {
-    path: "/",
-    redirect: "/home-view",
-  },
+
   {
     path: "/sign-up",
     name: "Sign Up Form",
-    component: () => import("@/core/fast-scooter/pages/sign-up-form.vue")
+    component: () => import("@/core/fast-scooter/pages/user-sign-up-form.component.vue")
   },
   {
     path: "/login",
     name: "Login Form",
-    component: () => import("@/core/fast-scooter/pages/login-form.component.vue")
+    component: () => import("@/core/fast-scooter/pages/user-login-form.component.vue")
   },
   {
-    path: "/users/:id",
+    path: "/user/profile",
     name: "User Profile",
     component: () => import("@/core/fast-scooter/pages/user-profile.component.vue")
   },
   {
-    path: "/scooters",
-    name: "Scooters Grid",
-    component: () => import("@/core/fast-scooter/pages/scooters-grid.component.vue")
+    path: "/user/profile/update",
+    name: "User Profile Update",
+    component: () => import("@/core/fast-scooter/pages/user-profile-update.component.vue")
   },
   {
-    path: "/bookings",
-    name: "Bookings Table",
-    component: () => import("@/core/fast-scooter/pages/bookings-table.component.vue")
+    path: "/user/profile/payment",
+    name: "User Profile Payment",
+    component: () => import("@/core/fast-scooter/pages/user-profile-payment.component.vue")
+  },
+
+  {
+    path: "/scooter-search",
+    name: "Search Scooter",
+    component: () => import("@/core/fast-scooter/pages/scooter-search.component.vue")
+  },
+  {
+    path: "/scooter-add",
+    name: "Add a Scooter",
+    component: () => import("@/core/fast-scooter/pages/scooter-add.component.vue")
+  },
+  {
+    path: "/scooter-purchase",
+    name: "Purchase a Scooter",
+    component: () => import("@/core/fast-scooter/pages/scooter-purchase.component.vue")
+  },
+
+  {
+    path: "/",
+    redirect: "/home",
   },
   {
     path: "/:pathMatch(.*)*",
