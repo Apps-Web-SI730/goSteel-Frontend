@@ -38,7 +38,7 @@ export default {
 
           <div class="inputBox">
             <label for="card">Tarjetas que aceptamos :</label>
-            <img src="../assets/img/card_img.png" alt="" />
+            <img src="" alt="" />
           </div>
 
           <div class="inputBox">
