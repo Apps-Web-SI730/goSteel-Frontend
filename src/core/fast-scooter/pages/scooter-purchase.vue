@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'login-form.component'
+  name: 'scooter-purchase'
 }
 </script>
 
