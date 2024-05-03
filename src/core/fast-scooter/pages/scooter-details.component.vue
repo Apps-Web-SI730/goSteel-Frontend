@@ -30,6 +30,38 @@ const load = () => {
 
 </script>
 
+import BookingsApiService from "@/core/fast-scooter/services/bookings-api.service.js";
+import UserHeader from '@/core/fast-scooter/components/user-header.component.vue';
+import Message from 'primevue/message';
+import InputNumber from 'primevue/inputnumber';
+import Calendar from 'primevue/calendar';
+import InputIcon from 'primevue/inputicon';
+import Button from "primevue/button";
+import Rating from 'primevue/rating';
+import TabView from 'primevue/tabview';
+import TabPanel from 'primevue/tabpanel';
+import { ref } from "vue";
+const value2 = ref(1)
+const icondisplay = ref();
+const templatedisplay = ref();
+const loading = ref(false);
+const showSuccessMessage = ref(false);
+const value = ref(4);
+''
+const load = () => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+    showSuccessMessage.value = true;
+    setTimeout(() => {
+      router.push('/payment');
+    }, 2000); // Cambiado a 3000 para que el redireccionamiento sea después de 3 segundos
+  }, 1000); // Mensaje mostrado después de 1 segundo
+};
+
+
+
+
 
 <template>
   <user-header />
@@ -94,5 +126,49 @@ const load = () => {
 </template>
 
 <style scoped>
+.container-details{
+  //background-color: aqua;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-scooters-details{
+  display: flex;
+}
+.text-scooter-details{
+  margin-left: 20px;
+
+}
+
+.text-scooter-details-time{
+  display: flex;
+  align-items: center;
+}
+.input-time-container{
+  width: 100px;
+}
+
+.image-scooter{
+  width: 500px;
+  height: 500px;
+}
+
+.text-scooter-details-take-time{
+  display: flex;
+  align-items: center;
+}
+.input-take-time{
+  width: 150px;
+}
+
+.footer-price{
+  align-content: end;
+}
+
+.button-buy{
+  width: 200px;
+}
 
 </style>
