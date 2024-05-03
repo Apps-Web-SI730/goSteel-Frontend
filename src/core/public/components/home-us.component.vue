@@ -5,9 +5,9 @@ export default {
   data() {
     return {
       images: [
-        'https://placehold.co/500',
-        'https://placehold.co/500',
-        'https://placehold.co/500',
+        'https://i.imgur.com/62FhjLf.png',
+        'https://i.imgur.com/62FhjLf.png',
+        'https://i.imgur.com/62FhjLf.png',
       ],
       currentImageIndex: 0,
     };
@@ -39,7 +39,7 @@ export default {
       <div>
         <h1 class="font-semibold text-900"><span class="text-orange-500">Fast</span>Scooter</h1>
         <p>{{ $t('about-content') }}</p>
-<!--        <div class="buttons"></div>-->
+        <!--        <div class="buttons"></div>-->
       </div>
     </div>
 
@@ -47,11 +47,11 @@ export default {
       <div class="carousel">
         <img :src="currentImage" alt="Imagen del carrusel" />
 
-<!--        <button class="next-button" @click="nextImage">-->
-<!--          <div class="i-container">-->
-<!--            <i class="fa-solid fa-angle-right" style="color: #f97316"></i>-->
-<!--          </div>-->
-<!--        </button>-->
+        <!--        <button class="next-button" @click="nextImage">-->
+        <!--          <div class="i-container">-->
+        <!--            <i class="fa-solid fa-angle-right" style="color: #f97316"></i>-->
+        <!--          </div>-->
+        <!--        </button>-->
       </div>
     </div>
   </div>
