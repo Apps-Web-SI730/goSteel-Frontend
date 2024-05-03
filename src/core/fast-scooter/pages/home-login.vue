@@ -35,5 +35,7 @@ export default {
 </template>
 
 <style scoped>
-
+.w-md {
+  max-width: 80rem;
+}
 </style>
