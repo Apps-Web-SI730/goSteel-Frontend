@@ -1,150 +1,35 @@
-<script>
-import UsersApiService from '@/core/fast-scooter/services/users.service.js';
-
-export default {
-  name: 'user-sign-up-form',
-
-  data: () => ({
-    checked: false,
-  }),
-
-  methods: {
-    async onSubmit() {
-      if (!(await this.validForm())) return;
-
-      if (!(await this.createUser())) {
-        this.errorToast('Hubo un error al crear la cuenta');
-        return;
-      }
-
-      this.successToast();
-
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-
-      this.$router.push('/profile#login');
-    },
-
-    async successToast() {
-      this.$toast.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Logged in',
-        life: 3000,
-      });
-    },
-    async errorToast(message) {
-      this.$toast.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: message,
-        life: 3000,
-      });
-    },
-
-    // async validForm() {
-    //   if (this.name == null || this.email == null || this.password1 == null) {
-    //     await this.errorToast('Llena los campos indicados');
-    //     return false;
-    //   }
-    //
-    //   if (this.name == '' || this.email == '' || this.password1 == '') {
-    //     await this.errorToast('Llena los campos indicados');
-    //     return false;
-    //   }
-    //
-    //   if (this.password1 != this.password2) {
-    //     await this.errorToast('Las contraseñas no coinciden');
-    //     return false;
-    //   }
-    //
-    //   if (this.email.indexOf('@') == -1) {
-    //     await this.errorToast('El correo no es válido');
-    //     return false;
-    //   }
-    //
-    //   if (this.password1.length < 5) {
-    //     await this.errorToast('La contraseña debe tener al menos 5 caracteres');
-    //     return false;
-    //   }
-    //
-    //   return true;
-    // },
-
-    async createUser() {
-
-      const user = {
-        name: this.name,
-        email: this.email,
-        password: this.password1,
-        phone: '999888777',
-        image: 'https://i.pinimg.com/474x/ab/01/43/ab01437a16fdf57072342eb1a9bc303a.jpg',
-        birthDate: '2000-01-01',
-      };
-
-      const dataID = {
-        email: this.email,
-        password: this.password1,
-      };
-
-      try {
-        await UsersApiService.create(user);
-        localStorage.setItem('id', await UsersApiService.login(dataID));
-        return true;
-      } catch (error) {
-        return false;
-      }
-
-    }
-  },
-
-}
-</script>
-
 <template>
   <div class="justify-content-center flex justify-center align-items-center h-screen">
     <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
 
       <div class="text-center mb-5">
-<!--        <img src="@/assets/img/lywlogo.png" alt="Lead Your Way logo" height="50" class="mb-3" />-->
         <div class="text-900 text-3xl font-medium mb-3">{{ $t('loginpage-welcome') }}</div>
         <span class="text-600 font-medium line-height-3">{{ $t('loginpage-message2') }}</span>
-        <a class="font-medium no-underline ml-2 text-orange-500 cursor-pointer" href="/signup">{{
-            $t('login')
-          }}</a>
+        <a class="font-medium no-underline ml-2 text-orange-500 cursor-pointer" href="/signup">{{ $t('login') }}</a>
       </div>
 
       <div>
-        <label for="name1" class="block text-900 font-medium mb-2">{{
-            $t('loginpage-name')
-          }}</label>
-        <pv-input-text id="name1" type="text" class="w-full mb-3" v-model="name" />
+        <label for="username" class="block text-900 font-medium mb-2">{{ $t('loginpage-name') }}</label>
+        <pv-input-text id="username" type="text" class="w-full mb-3" v-model="username" />
 
-        <label for="email1" class="block text-900 font-medium mb-2">{{
-            $t('loginpage-email')
-          }}</label>
-        <pv-input-text id="email1" type="text" class="w-full mb-3" v-model="email" />
+        <label for="email" class="block text-900 font-medium mb-2">{{ $t('loginpage-email') }}</label>
+        <pv-input-text id="email" type="text" class="w-full mb-3" v-model="email" />
 
-        <label for="password1" class="block text-900 font-medium mb-2">{{
-            $t('loginpage-password')
-          }}</label>
-        <pv-input-text id="password1" type="password" class="w-full mb-3" v-model="password1" />
+        <label for="password" class="block text-900 font-medium mb-2">{{ $t('loginpage-password') }}</label>
+        <pv-input-text id="password" type="password" class="w-full mb-3" v-model="password" />
 
-        <label for="password2" class="block text-900 font-medium mb-2">{{
-            $t('loginpage-repeatpassword')
-          }}</label>
-        <pv-input-text id="password2" type="password" class="w-full mb-3" v-model="password2" />
+        <label for="confirmPassword" class="block text-900 font-medium mb-2">{{ $t('loginpage-repeatpassword') }}</label>
+        <pv-input-text id="confirmPassword" type="password" class="w-full mb-3" v-model="confirmPassword" />
 
         <div class="flex align-items-center justify-content-between mb-6">
-          <a class="font-medium no-underline ml-2 text-orange-500 text-right cursor-pointer">{{
-              $t('signup-seepassword')
-            }}</a>
+          <a class="font-medium no-underline ml-2 text-orange-500 text-right cursor-pointer">{{ $t('signup-seepassword') }}</a>
         </div>
 
         <pv-button
           :label="$t('register')"
           icon="pi pi-user"
           class="w-full bg-orange-400 border-orange-200"
-          @click="onSubmit()"
+          @click="create()"
         ></pv-button>
       </div>
 
@@ -152,6 +37,63 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<script>
+import { UserApiService } from '@/core/fast-scooter/services/user-api.service.js';
 
+export default {
+  name: 'user-sign-up-form',
+  data() {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      imgUrl:'',
+      date:'',
+      cellphone:'',
+      userApiService: new UserApiService()
+    };
+  },
+  methods: {
+    async create() {
+      if (!this.validateForm()) return;
+
+      const user = {
+        username: this.username,
+        email: this.email,
+        password: this.password,
+        cellphone:"9392323",
+        date:'2024-05-10',
+        imgUrl:'https://i.imgur.com/krhyFim.png'
+      };
+
+      try {
+        const response = await this.userApiService.create(user);
+        if (response.status === 201) {
+          alert('User created');
+          this.$router.push('/home-login'); // Cambié 'users' por '/home'
+        }
+      } catch (error) {
+        console.error('Error creating user:', error);
+        alert('Error creating user');
+      }
+    },
+
+    validateForm() {
+      if (!this.username || !this.email || !this.password || !this.confirmPassword) {
+        alert('Please fill in all fields');
+        return false;
+      }
+      if (this.password !== this.confirmPassword) {
+        alert('Passwords do not match');
+        return false;
+      }
+      return true;
+    }
+  }
+};
+</script>
+
+<style scoped>
+/* Add your component-specific styles here */
 </style>

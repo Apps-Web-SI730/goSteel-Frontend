@@ -25,32 +25,27 @@ export default {
         name: 'Pietro Minaya',
         role: 'CTO',
         image:
-          'https://placehold.co/240',
+          'https://raw.githubusercontent.com/Apps-Web-SI730/goSteel-informe/main/assets/profile-pietro.png',
       },
       {
-        name: 'Developer 2',
+        name: 'Sharon Barrial',
         role: 'CEO',
         image:
-          'https://placehold.co/240',
+          'https://raw.githubusercontent.com/Apps-Web-SI730/goSteel-informe/main/assets/profile-sharon.png',
       },
       {
-        name: 'Developer 3',
+        name: 'Zkoot ',
         role: 'Technical Leader',
         image:
-          'https://placehold.co/240',
+          'https://raw.githubusercontent.com/Apps-Web-SI730/goSteel-informe/main/assets/profile-scott.jpg',
       },
       {
-        name: '',
-        role: 'Frontend Developer',
+        name: 'Josue Hidalgo Bustamante',
+        role: 'Chamo Developer',
         image:
-          'https://placehold.co/240',
-      },
-      {
-        name: '',
-        role: 'Frontend Developer',
-        image:
-          'https://placehold.co/240',
+          'https://i.imgur.com/zrpMQ7R.jpg',
       }
+
     ],
   }),
 };

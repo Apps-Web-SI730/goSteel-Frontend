@@ -1,10 +1,4 @@
-export class Booking {
-    // constructor(id, initDate, endDate) {
-    //     this.id = id;
-    //     this.initDate = initDate;
-    //     this.endDate = endDate;
-    // }
-
+export class Favorite {
     constructor(id, brand, description, price, image) {
         this.id = id;
         this.brand = brand;

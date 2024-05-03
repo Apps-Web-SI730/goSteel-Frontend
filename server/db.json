@@ -1,26 +1,279 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "User",
       "email": "email@email.com",
       "password": "password123"
+    },
+    {
+      "id": "520b",
+      "username": "josue",
+      "email": "hola@gmail.com",
+      "password": "1234",
+      "cellphone": "9392323",
+      "date": "2024-05-10",
+      "imgUrl": "https://i.imgur.com/krhyFim.png"
+    },
+    {
+      "id": "2951",
+      "username": "dasdasd",
+      "email": "dasdsad@gmail.com",
+      "password": "1",
+      "cellphone": "9392323",
+      "date": "2024-05-10",
+      "imgUrl": "https://i.imgur.com/krhyFim.png"
+    },
+    {
+      "id": "4423",
+      "username": "dasdad",
+      "email": "dsdasd@gmail.com",
+      "password": "1234",
+      "cellphone": "9392323",
+      "date": "2024-05-10",
+      "imgUrl": "https://i.imgur.com/krhyFim.png"
+    },
+    {
+      "id": "5d4d",
+      "username": "pepe",
+      "email": "pepe@gmail.com",
+      "password": "1234",
+      "cellphone": "9392323",
+      "date": "2024-05-10",
+      "imgUrl": "https://i.imgur.com/krhyFim.png"
     }
   ],
   "scooters": [
     {
-      "id": 1,
+      "id": "1",
+      "brand": "Brand Name",
+      "description": "Lorem Ipsum etvc",
+      "price": 100,
+      "image": "https://falabella.scene7.com/is/image/FalabellaPE/881662378_1?wid=800&hei=800&qlt=70"
+    },
+    {
+      "id": "2",
+      "brand": "Another Brand",
+      "description": "Lorem Ipsum dolor sit amet",
+      "price": 120,
+      "image": "https://smartmoveperu.com/wp-content/uploads/2022/11/kingsong-n15-orange-scaled.jpg"
+    },
+    {
+      "id": "3",
+      "brand": "Yet Another Brand",
+      "description": "Lorem Ipsum consectetur adipiscing elit",
+      "price": 150,
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/333953/HN-FS031_1.jpg?v=638382761849830000"
+    },
+    {
+      "id": "4",
+      "brand": "New Brand",
+      "description": "Lorem Ipsum dolor sit amet",
+      "price": 110,
+      "image": "https://www.alphaproscooters.com/cdn/shop/products/root-industries-type-r-pro-scooter-rocket-fuel-completes-root-industries-845351.jpg?v=1613577247"
+    },
+    {
+      "id": "5",
+      "brand": "Popular Brand",
+      "description": "Lorem Ipsum consectetur adipiscing elit",
+      "price": 130,
+      "image": "https://falabella.scene7.com/is/image/FalabellaPE/883020123_1?wid=800&hei=800&qlt=70"
+    },
+    {
+      "id": "6",
+      "brand": "Premium Brand",
+      "description": "Lorem Ipsum sed do eiusmod tempor incididunt",
+      "price": 200,
+      "image": "https://www.emove.com.co/wp-content/uploads/2024/03/Jam-1-plus_Propuesta-1-500x500.webp"
+    }
+  ],
+  "booking": [
+    {
+      "id": "1",
       "brand": "Brand Name",
       "description": "Lorem Ipsum etvc",
       "price": 100,
       "image": "https://placehold.co/400"
     }
   ],
-  "booking": [
+  "favorites": [
     {
-      "id": 1,
-      "initDate": "01/05/2024",
-      "endDate": "31/05/2024"
+      "id": "3",
+      "brand": "Yet Another Brand",
+      "description": "Lorem Ipsum consectetur adipiscing elit",
+      "price": 150,
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/333953/HN-FS031_1.jpg?v=638382761849830000"
+    },
+    {
+      "id": "4",
+      "brand": "New Brand",
+      "description": "Lorem Ipsum dolor sit amet",
+      "price": 110,
+      "image": "https://www.alphaproscooters.com/cdn/shop/products/root-industries-type-r-pro-scooter-rocket-fuel-completes-root-industries-845351.jpg?v=1613577247"
+    }
+  ],
+  "paymentData": [
+    {
+      "nombre": "Juan Pérez",
+      "numero_tarjeta": "1234567890123456",
+      "nombre_tarjeta": "Juan Pérez",
+      "correo": "juan@example.com",
+      "exp_year": "25",
+      "mes_exp": "12",
+      "cvv": "123",
+      "id": "e0dc"
+    },
+    {
+      "nombre": "María García",
+      "numero_tarjeta": "9876543210987654",
+      "nombre_tarjeta": "María García",
+      "correo": "maria@example.com",
+      "exp_year": "23",
+      "mes_exp": "10",
+      "cvv": "456",
+      "id": "748a"
+    },
+    {
+      "nombre": "Luis Martínez",
+      "numero_tarjeta": "5678901234567890",
+      "nombre_tarjeta": "Luis Martínez",
+      "correo": "luis@example.com",
+      "exp_year": "24",
+      "mes_exp": "07",
+      "cvv": "789",
+      "id": "b52f"
+    },
+    {
+      "id": "6b63",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasd",
+      "nombre_tarjeta": "dasd",
+      "correo": "dasd@gmail.com",
+      "exp_year": "dasd",
+      "mes_exp": "adsasd",
+      "cvv": "asdasd",
+      "paymentApiService": {}
+    },
+    {
+      "id": "5169",
+      "nombre": "hola",
+      "numero_tarjeta": "123454",
+      "nombre_tarjeta": "ddd",
+      "correo": "daholi@gmail.com",
+      "exp_year": "1234",
+      "mes_exp": "123",
+      "cvv": "123",
+      "paymentApiService": {}
+    },
+    {
+      "id": "4444",
+      "nombre": "pepe",
+      "numero_tarjeta": "123123123123",
+      "nombre_tarjeta": "pepe",
+      "correo": "adasdad@gmaill.com",
+      "exp_year": "1234",
+      "mes_exp": "123",
+      "cvv": "123",
+      "paymentApiService": {}
+    },
+    {
+      "id": "72c9",
+      "nombre": "dasd",
+      "numero_tarjeta": "123124",
+      "nombre_tarjeta": "dasdasd",
+      "correo": "hola@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "d032",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasdasd",
+      "nombre_tarjeta": "asdasd",
+      "correo": "hola@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "a670",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasdasd",
+      "nombre_tarjeta": "asdasd",
+      "correo": "hola@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "4aad",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasdasd",
+      "nombre_tarjeta": "asdasd",
+      "correo": "hola@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "e87c",
+      "nombre": "dasd",
+      "numero_tarjeta": "123",
+      "nombre_tarjeta": "123123",
+      "correo": "partyrock340@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "123",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "96a8",
+      "nombre": "dasdsad",
+      "numero_tarjeta": "1",
+      "nombre_tarjeta": "12",
+      "correo": "partyrock340@gmail.com",
+      "exp_year": "12",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "3aa2",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasd",
+      "nombre_tarjeta": "dasd",
+      "correo": "partyrock340@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "12",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "544f",
+      "nombre": "dasd",
+      "numero_tarjeta": "dasd",
+      "nombre_tarjeta": "dasd",
+      "correo": "partyrock340@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
+    },
+    {
+      "id": "ecbb",
+      "nombre": "dasd",
+      "numero_tarjeta": "12345",
+      "nombre_tarjeta": "1234",
+      "correo": "partyrock340@gmail.com",
+      "exp_year": "1",
+      "mes_exp": "1",
+      "cvv": "1",
+      "paymentApiService": {}
     }
   ]
 }
