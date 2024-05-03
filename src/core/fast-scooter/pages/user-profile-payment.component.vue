@@ -1,4 +1,17 @@
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const redirectToHome = () => {
+  // You can perform any additional logic before redirection here, if necessary
+  router.push('/home'); // Redirect to '/home'
+};
+</script>
+
 <script>
+import { PaymentApiService } from '@/core/fast-scooter/services/payment-api.service.js';
+
 export default {
   name: 'user-profile-payment.component',
 
@@ -12,37 +25,92 @@ export default {
         exp_year: '',
         mes_exp: '',
         cvv: '',
-      },
+        paymentApiService: new PaymentApiService()
+      }
     };
   },
-}
+
+  methods: {
+
+    async create() {
+      try {
+        // Validation for card number length
+        if (this.PaymentData.numero_tarjeta.length !== 16) {
+          alert('The card number must have 16 digits.');
+          return;
+        }
+
+        // Validation for expiration year length
+        if (this.PaymentData.exp_year.length !== 4) {
+          alert('The expiration year must have 4 digits.');
+          return;
+        }
+
+        // Validation for expiration month length
+        if (this.PaymentData.mes_exp.length !== 2) {
+          alert('The expiration month must have 2 digits.');
+          return;
+        }
+
+        // Validation for CVV length
+        if (this.PaymentData.cvv.length !== 3) {
+          alert('The CVV must have 3 digits.');
+          return;
+        }
+
+        const response = await this.PaymentData.paymentApiService.create(this.PaymentData);
+        if (response.status === 201) {
+          alert('Payment method added successfully');
+
+          setTimeout(() => {
+            this.$router.push('/home-login');
+          }, 1000);
+
+
+        }
+      } catch (error) {
+        console.error('Error creating payment method:', error);
+        alert('Error creating payment method');
+      }
+      redirectToHome();
+
+    },
+
+    clearFields() {
+      this.PaymentData = {
+        nombre: '',
+        numero_tarjeta: '',
+        nombre_tarjeta: '',
+        correo: '',
+        exp_year: '',
+        mes_exp: '',
+        cvv: ''
+      };
+    }
+
+  }
+};
 </script>
 
 <template>
   <div class="container">
-    <form>
+    <form @submit.prevent="create">
       <div class="row">
-        <h1 class="title">Métodos de pago</h1>
+        <h1 class="title">Payment Methods</h1>
 
         <div class="col">
           <div class="inputBox">
-            <label for="nombre">Nombre completo :</label>
-            <input
-              v-model="PaymentData.nombre"
-              type="text"
-              id="nombre"
-              placeholder="Example Name"
-              required
-            />
+            <label for="nombre">Full Name:</label>
+            <input type="text" id="nombre" v-model="PaymentData.nombre" placeholder="Example Name" required />
           </div>
 
           <div class="inputBox">
-            <label for="card">Tarjetas que aceptamos :</label>
-            <img src="" alt="" />
+            <label for="card">Accepted Cards :</label>
+            <img src="../assets/img/card_img.png" alt="" />
           </div>
 
           <div class="inputBox">
-            <label for="numero_tarjeta">Número de tarjeta :</label>
+            <label for="numero_tarjeta">Card Number :</label>
             <input
               v-model="PaymentData.numero_tarjeta"
               type="text"
@@ -53,7 +121,7 @@ export default {
           </div>
 
           <div class="inputBox">
-            <label for="nombre_tarjeta">Nombre de su tarjeta :</label>
+            <label for="nombre_tarjeta">Cardholder Name :</label>
             <input
               v-model="PaymentData.nombre_tarjeta"
               type="text"
@@ -66,7 +134,7 @@ export default {
 
         <div class="col">
           <div class="inputBox">
-            <label for="email">Correo electrónico :</label>
+            <label for="email">Email :</label>
             <input
               v-model="PaymentData.correo"
               type="email"
@@ -78,7 +146,7 @@ export default {
 
           <div class="flex">
             <div class="inputBox">
-              <label for="año_exp">Año de exp :</label>
+              <label for="año_exp">Expiration Year :</label>
               <input
                 v-model="PaymentData.exp_year"
                 type="text"
@@ -88,7 +156,7 @@ export default {
               />
             </div>
             <div class="inputBox">
-              <label for="mes_exp">Mes de exp :</label>
+              <label for="mes_exp">Expiration Month :</label>
               <input
                 v-model="PaymentData.mes_exp"
                 type="text"
@@ -112,7 +180,7 @@ export default {
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">Añadir método</button>
+      <button type="submit" class="submit-btn"  >Add Method</button>
     </form>
   </div>
 </template>
