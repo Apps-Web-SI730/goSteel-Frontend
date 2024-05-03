@@ -42,4 +42,34 @@ const handleLogout = () => {
 </script>
 
 <style scoped>
+  .menu-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-options a,
+.logout-link {
+  text-decoration: none;
+  color: #333;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.menu-options a:hover,
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+/* Ajustar el espaciado entre los elementos /
+.menu-options router-link + router-link::before,
+.menu-options router-link + a::before {
+  content: "|";
+  margin-left: 1rem;
+}
+
+/ Estilo para el mensaje de cierre de sesión */
+.logout-loading {
+  margin-left: 1rem;
+  color: #666;
+}
 </style>
