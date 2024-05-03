@@ -24,6 +24,20 @@ import { ref } from 'vue';
 
 const router = useRouter();
 const loading = ref(false);
+
+const handleLogout = () => {
+  // Mostrar el mensaje de cierre de sesión
+  loading.value = true;
+
+  // Simular el cierre de sesión con un retraso de 2 segundos
+  setTimeout(() => {
+    // Ocultar el mensaje de cierre de sesión
+    loading.value = false;
+
+    // Redirigir a la ruta /home
+    router.push('/home');
+  }, 2000);
+};
 </script>
 
 <style scoped>
