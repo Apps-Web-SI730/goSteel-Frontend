@@ -7,6 +7,7 @@
 
     <template #end>
       <p class="menu-options">
+        <router-link to="/home-login">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/support-client">Contact</router-link>
         <router-link to="/search-scooter">Reservation</router-link>
