@@ -3,6 +3,6 @@ export class User {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
+        this.password = password
     }
 }
