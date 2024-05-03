@@ -24,6 +24,14 @@ export default {
 <template>
 <fake-toolbar/>
 
+  <div class="w-md justify-center mx-auto px-4">
+    <home-us/>
+    <home-scooters />
+    <home-team />
+    <home-get-started />
+    <home-contact />
+  </div>
+
 </template>
 
 <style scoped>
